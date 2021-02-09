@@ -42,6 +42,21 @@ function letterChecker(str) {
 // output: true (because 4+3)
 
 function sumEqualsTarget(arr, target) {
+   console.log("sumEqualsTarget", arr, target)
+   for (let i = 0; i < arr.length; i++) {
+      const num1 = arr[i];
+
+      for (let j = i; j < arr.length; j++) {
+         const num2 = arr[j];
+         //console.log(num1, num2, num1 + num2);
+         if(num1 + num2 == target)
+            //console.log("true");
+            return true;
+      }
+      
+   }
+   //console.log("false");
+   return false;
 }
 
 
