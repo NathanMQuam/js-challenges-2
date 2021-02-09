@@ -9,7 +9,26 @@
 // Hint: Utilize the string prototype method charCodeAt and generic method fromCharCode
 
 function letterChecker(str) {
+   let result = ""
+   // 97 - 122 is the alphabet, from A-Z
+   for(let i = 0; i < str.length; i++) {
+      let firstLetter = str.charCodeAt(0)
+      let currentLetter = str.charCodeAt(i)
 
+      //console.log(i + firstLetter, currentLetter, result)
+      if(currentLetter != i + firstLetter) {
+         result += String.fromCharCode(i + firstLetter);
+         str = (str.substring(0, i) + String.fromCharCode(i + firstLetter) + (str.substring(i, str.length)))
+         //console.log(String.fromCharCode(i + firstLetter), result)
+      }
+   }
+
+   if(result == "") {
+      result = "no missing letters";
+   }
+
+   //console.log(str,"Final result: ", result)
+   return result
 }
 
 

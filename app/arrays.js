@@ -138,7 +138,7 @@ let theBand = {
 // Output: "[band-members-name] is in the band and plays the [band-members-instrument]".
 function bandMemberDetails(name) {
     let member = theBand.members.find(person => person.name == name);
-    console.log(name, member);
+    //console.log(name, member);
     
     return `${member.name} is in the band and plays the ${member.instrument}`;
 }
