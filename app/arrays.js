@@ -3,7 +3,12 @@
 // input: ['This', 'is', 'a', 'split', 'sentence.']
 // output: ['is', 'a', 'split', 'sentence.', 'This']
 
-function rearranger(arr) {
+function rearranger(arr = []) {
+    //console.log(arr);
+    arr.push(arr.shift())
+    //console.log(arr);
+    return arr;
+    // return arr.push(arr.shift());
 }
 
 
@@ -15,7 +20,15 @@ function rearranger(arr) {
 // input: [6, 4, 8, 33, 42, 10]
 // output: 42
 
-function largestNum(arr) {
+// TODO: Stretch Goal
+function largestNum(arr = []) {
+    let largest = 0;
+    //console.log(arr);
+    arr.forEach((num) => {
+        ( num > largest ? largest = num : false )
+    })
+
+    return largest;
 }
 
 
@@ -28,6 +41,11 @@ function largestNum(arr) {
 // output: [16, 8, 4, 28]
 
 function elemsTimesLength(arr) {
+    let newArr = [];
+    for(let i = 0; i < arr.length; i++) {
+        newArr.push(arr[i] * arr.length);
+    }
+    return newArr;
 }
 
 
@@ -63,7 +81,10 @@ let flights = [{
 
 function flightCost(destination, firstClass) {
     //***hint: use the find method***
-
+    let newPrices = flights.find(flight => flight.to == destination.toUpperCase()).prices
+    //console.log(destination, firstClass, newPrices);
+    return (firstClass ? newPrices.firstClass : newPrices.standard)
+    
 }
 
 
@@ -84,7 +105,11 @@ let staff = [{ id: 1, name: 'Jon' }, { id: 2, name: 'Yuli' }, { id: 21, name: 'P
 { id: 881, name: 'Paul' }, { id: 0, name: 'Jon' }, { id: 999, name: 'Timma' }]
 
 function findById(id) {
-
+    let employee = staff.find(person => person.id == id)
+    if (employee)
+        return employee;
+    else
+        return {error: "No user with that id."}
 }
 
 
@@ -110,5 +135,10 @@ let theBand = {
     }]
 }
 
+// Output: "[band-members-name] is in the band and plays the [band-members-instrument]".
 function bandMemberDetails(name) {
+    let member = theBand.members.find(person => person.name == name);
+    console.log(name, member);
+    
+    return `${member.name} is in the band and plays the ${member.instrument}`;
 }
