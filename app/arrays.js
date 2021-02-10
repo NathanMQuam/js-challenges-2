@@ -23,10 +23,22 @@ function rearranger(arr = []) {
 // TODO: Stretch Goal
 function largestNum(arr = []) {
     let largest = 0;
+    let largestNums = {};
     //console.log(arr);
     arr.forEach((num) => {
-        ( num > largest ? largest = num : false )
+        if(num >= largest) {
+            largest = num
+
+            // if(num == largest) {
+            //     largestNums
+            //     largestNums[num]++
+            //     console.log(largestNums);
+            // }
+        }
     })
+    if(largestNums.num) {
+        return largestNums
+    }
 
     return largest;
 }

@@ -42,7 +42,7 @@ function letterChecker(str) {
 // output: true (because 4+3)
 
 function sumEqualsTarget(arr, target) {
-   console.log("sumEqualsTarget", arr, target)
+   //console.log("sumEqualsTarget", arr, target)
    for (let i = 0; i < arr.length; i++) {
       const num1 = arr[i];
 
@@ -70,4 +70,5 @@ function sumEqualsTarget(arr, target) {
 // output: [2, 1, 4, 3, 6, 6, 5, 9, 8]
 
 function oddAscender(arr) {
+   
 }
